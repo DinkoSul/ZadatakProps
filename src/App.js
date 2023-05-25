@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import UserChildren from "./kompomenteProps/UserChildren";
+import UserClass from "./kompomenteProps/UserClass";
+import UserFunction from "./kompomenteProps/UserFunction";
 
 function App() {
+  const users = [
+    { name: "Ivan", years: 30 },
+    { name: "Ana", years: 25 },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React aplikacija</h1>
+      <h3>Function</h3>
+      <UserFunction name={users[0].name} years={users[0].years} />
+      <h3>Class</h3>
+      <UserClass name={users[1].name} years={users[1].years} />
+      <h3>Children</h3>
+      <UserChildren name={users[1].name} years={users[1].years}>
+        A hobi mi je plivanje.
+      </UserChildren>
     </div>
   );
 }
